@@ -1,0 +1,47 @@
+.offcanvas-size-xl {
+  --bs-offcanvas-width: min(95vw, 600px) !important;
+}
+.offcanvas-size-xxl {
+  --bs-offcanvas-width: min(95vw, 90vw) !important;
+}
+.offcanvas-size-md {
+  /* add Responsivenes to default offcanvas */
+  --bs-offcanvas-width: min(95vw, 250px) !important;
+}
+.offcanvas-size-sm {
+  --bs-offcanvas-width: min(95vw, 250px) !important;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+.nav-logo {
+  animation: rotation 4s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.nav-item:hover *{
+  color: #198754;
+  transform: scale(1.05);
+}
+
+.nav-icon:hover * {
+  color: #198754;
+  transform: scale(1.2);
+}
+
+.navbar:active {
+  background-color: white;
+}
