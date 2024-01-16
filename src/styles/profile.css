@@ -63,27 +63,7 @@
 }
 
 @media (max-width: 768px) {
-  .education
-  {
-    height: 90vh;
-  }
-
-  .education .item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .education .item .col-md-6 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .break {
-    width: 70%;
-    margin-left: 15%;
-    margin-top: 7.5%;
-  }
+  
 }
 
 .heading-profile {
@@ -190,17 +170,6 @@
   margin-block: 8px;
 }
 
-@media (max-width:768px) {
-  .extras {
-    margin-top: 10%;
-    height: 85vh;
-  }
-
-  .extras .first {
-    margin-bottom: 10%;
-  }
-}
-
 .inner-div {
   margin-left: 15%;
   width: 70%;
@@ -214,6 +183,50 @@
   .skills-subdiv {
     height: 100%;
   }
+
+  .extras {
+    margin-top: 10%;
+    height: 85vh;
+  }
+
+  .extras .first {
+    margin-bottom: 10%;
+  }
+
+  .education
+  {
+    height: 90vh;
+  }
+
+  .education .item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .education .item .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .break {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 7.5%;
+  }
+
+  .work-exp {
+    height: 220vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .education {
+    height: 100vh;
+    text-align: center;
+  }
 }
 
 @media (max-width:650px) {
@@ -223,11 +236,9 @@
   .job-role .period {
     font-size: 0.8em;
   }
-
   .work-exp .work-exp-card {
     width: 90%;
   }
-  
 }
 
 .progress-bar {
@@ -263,22 +274,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .work-exp {
-    height: 220vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .education {
-    height: 100vh;
-    text-align: center;
-  }
-
-}
-
 @media (max-width: 420px) {
 
   .work-exp {
@@ -291,5 +286,26 @@
 
   .card-header {
     flex-direction: column;
+  }
+}
+
+@media (max-height: 500px) {
+  .work-exp {
+    height: 260vh;
+  }
+
+  .education {
+    height: 150vh;
+  }
+
+}
+
+@media (max-height: 1000px) {
+  .work-exp {
+    height: 200vh;
+  }
+
+  .education {
+    height: 100vh;
   }
 }

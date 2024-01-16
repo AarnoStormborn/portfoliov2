@@ -22,6 +22,10 @@
   align-items: center;
 }
 
+.extras .second {
+  margin-bottom: auto;
+}
+
 .tech-icon {
   width: 75px;
   height: 75px;
@@ -98,6 +102,33 @@
   .skills-section,
   .tools-section {
     height: 175vh;
+  }
+
+  .extras {
+    height: 100vh;
+  }
+}
+
+@media (max-height: 500px) {
+  .skills-section,
+  .tools-section {
+    height: 180vh;
+  }
+
+  .extras {
+    height: 100vh;
+  }
+}
+
+@media (max-height: 1000px) {
+  .skills-section,
+  .tools-section {
+    height: 180vh;
+  }
+
+  .skills-section .skills-subdiv,
+  .tools-section .tools-subdiv {
+    width: 80%;
   }
 
   .extras {

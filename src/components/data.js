@@ -96,7 +96,7 @@ export const projects = [
     {
         id: 12,
         title: "Electrical Faults Analysis",
-        desc: "Analysis & Detection of faults across an Electic relay based on Current & Voltage",
+        desc: "Analysis & Detection of faults across an Electric relay based on Current & Voltage",
         link: "https://www.kaggle.com/code/harshsingh2209/electrical-faults-analysis-classification",
         img: "/images/project/electric.jpg"
     },

@@ -370,3 +370,18 @@
   border-radius: 50%;
   background-color: #38cc87;
 }
+
+@media (max-height: 500px) {
+  .about-me {
+    height: 180vh;
+  }
+}
+
+@media (max-height: 1000px) {
+  .about-me {
+    height: 150vh;
+  }
+  .contact-section {
+    height: 150vh;
+  }
+}
