@@ -4,9 +4,9 @@ import "../styles/home.css";
 function Contact() {
   return (
     <>
-      <div className="contact-section parallax-layer">
-        <div className="top-div top-div-contact">
-          <div className="col-sm-10 col-md-5 top d-flex flex-column justify-content-center">
+      <div className="contact-section parallax-layer" id="contact">
+        <div className="top-div">
+          <div className="col-sm-10 col-md-5 top d-flex flex-column justify-content-center top-contact-div">
             <div className="px-5 py-5">
               <h1 className="heading-home">
                 <strong>Contact</strong>
@@ -52,7 +52,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="col-sm-10 col-md-5 d-flex align-items-center justify-content-center">
+          <div className="col-sm-10 col-md-5 d-flex align-items-center justify-content-center bottom-contact-div">
             <iframe
               id="map"
               title="map"
@@ -63,7 +63,6 @@ function Contact() {
             ></iframe>
           </div>
         </div>
-        
       </div>
     </>
   );

@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Particle from "./Particle";
 import "../styles/home.css";
 
 function Intro() {
+
+  const [banner, setBanner] = useState(1)
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBanner(prevBanner => (prevBanner%5)+1)
+    }, 1500);
+
+    return () => {
+      console.log("clear");
+      clearInterval(interval);
+    };
+  }, []);
+
+
   return (
     <>
       <Particle />
-      <div className="row intro-section parallax-layer">
-        <div className="col-sm-12 d-flex align-items-center justify-content-center">
+      <div className="row intro-section parallax-layer" id="home">
+        <div className="col-sm-7 d-flex align-items-center justify-content-center top-div">
           <div className="py-5 my-5">
             <h1 id="title">
               <strong>Harsh Singh</strong>
@@ -22,7 +37,7 @@ function Intro() {
                       <br />
                       ML Engineer
                       <br />
-                      Backend Developer
+                      Software Developer
                     </span>
                   </div>
                 </em>
@@ -45,6 +60,40 @@ function Intro() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="col-sm-5 d-flex align-items-center justify-content-center bottom-div">
+          <div className="banner-div">
+            <img
+              className="banner"
+              src="/images/banner-1.png"
+              style={{ display: banner!==1?'none':''}}
+              alt=""
+            />
+            <img
+              className="banner"
+              src="/images/banner-2.png"
+              style={{ display: banner!==2?'none':''}}
+              alt=""
+            />
+            <img
+              className="banner"
+              src="/images/banner-3.png"
+              style={{ display: banner!==3?'none':''}}
+              alt=""
+            />
+            <img
+              className="banner"
+              src="/images/banner-4.png"
+              style={{ display: banner!==4?'none':''}}
+              alt=""
+            />
+            <img
+              className="banner"
+              src="/images/banner-5.png"
+              style={{ display: banner!==5?'none':''}}
+              alt=""
+            />
           </div>
         </div>
       </div>

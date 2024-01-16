@@ -1,27 +1,33 @@
 import React from "react";
-import { skills } from "./data";
-import { Link } from "react-router-dom";
+import { skills, tools } from "./data";
+import '../styles/skills.css';
 
 function Skills() {
 
-  const handleClick = () => {
-    window.scrollTo(0, 0);
-  };
+  let firstHalf = skills.slice(0, 7);
+  let secondHalf = skills.slice(7, 14);
 
-  let firstHalf = skills.slice(0, 5);
-  let secondHalf = skills.slice(5, 10);
+  let skillsList = [firstHalf, secondHalf]
+
+  let t1 = tools.slice(0,4)
+  let t2 = tools.slice(4,8)
+  let t3 = tools.slice(8,12)
+  let t4 = tools.slice(12,16)
+
+  let toolsList = [t1, t2, t3, t4];
 
   return (
     <>
-      <div className="skills-section">
-        <div className="col-sm-10 col-md-8 top d-flex flex-column justify-content-center h-100 skills-subdiv">
+      <div className="skills-section" id="skills">
+        <div className="col-sm-10 col-md-6 top d-flex flex-column justify-content-center skills-subdiv">
           <div className="heading mb-5">
-            <h1 className="heading text-center">Skills</h1>
+            <h1 className="heading-skills text-center">Skills</h1>
           </div>
           <div className="row">
+            {skillsList.map((s) => (
             <div className="col-md-6">
               <div className="inner-div">
-                {firstHalf.map((skill) => (
+                {s.map((skill) => (
                   <div key={skill.id}>
                     <span className="progress-label" key={skill.id}>
                       {skill.name}
@@ -42,46 +48,37 @@ function Skills() {
                 ))}
               </div>
             </div>
-            <div className="col-md-6">
-              <div className="inner-div">
-                {secondHalf.map((skill) => (
-                  <div key={skill.id}>
-                    <span className="progress-label" key={skill.id}>
-                      {skill.name}
-                    </span>
-                    <div className="progress mb-3">
-                      <div
-                        className="progress-bar"
-                        role="progressbar"
-                        style={{ width: `${skill.percent}%` }}
-                        aria-valuenow={skill.percent}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <strong>{skill.percent}%</strong>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="d-flex justify-content-center projectBtn">
-            <Link className="btn btn-outline-success d-block px-3 py-2"
-              to="/projects" onClick={handleClick}>
-              See Projects
-            </Link>
+            ))}
           </div>
         </div>
       </div>
+
+      <div className="tools-section">
+        <div className="col-sm-10 col-md-6 top d-flex flex-column justify-content-center tools-subdiv">
+          <div className="heading mb-5">
+            <h1 className="heading-skills text-center">Tools</h1>
+          </div>
+          {toolsList.map((t) => (
+            <div className="row my-4">
+            {t.map((tool) => (
+              <div className="col-6 col-md-3 tech-row">
+                <img className={`tech-icon ${tool.id}`} src={`${tool.imgPath}`} alt="" />
+                <span className="mt-3">{tool.name}</span>
+              </div>
+            ))}
+          </div>
+          ))}
+        </div>
+      </div>
+
       <div className="extras">
         <div className="col-sm-10 col-md-6 top d-flex flex-column justify-content-center">
           <div className="heading mb-5">
-            <h1 className="heading-profile text-center">Extras</h1>
+            <h1 className="heading-skills text-center">Extras</h1>
           </div>
           <div className="row">
             <div className="col-md-6 first">
-              <h4 className="certifications  text-center">Certifications</h4>
+              <h3 className="certifications  text-center">Certifications</h3>
               <ul>
                 <li>
                   <strong>IBM</strong> Python for Data Science
@@ -98,7 +95,7 @@ function Skills() {
               </ul>
             </div>
             <div className="col-md-6 second">
-              <h4 className="extra-curricular text-center">Extra-Curricular</h4>
+              <h3 className="extra-curricular text-center">Extra-Curricular</h3>
               <ul>
                 <li>
                   <strong>Kaggle 3X Experts</strong> -<br />
@@ -113,13 +110,6 @@ function Skills() {
                   Rotaract Club of Bombay Airport
                 </li>
               </ul>
-            </div>
-            <div className="my-5 d-flex justify-content-center download-button">
-              <a className="btn btn-outline-success d-block px-3 py-2"
-                href="https://drive.google.com/file/d/19aSMSiMXccNzlCAPQSl26E9pR4xaS8CK/view?usp=sharing"
-                target="_blank" rel="noreferrer">
-                See Resume
-              </a>
             </div>
           </div>
         </div>

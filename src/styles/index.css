@@ -1,3 +1,35 @@
 body {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Cascadia Code', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: local('Cascadia Code'), url(fonts/CascadiaCode.woff2) format('woff2');
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .intro-section,
+  .education,
+  .skills-section,
+  .tools-section,
+  .contact-section {
+    height: 150vh;
+  }
+
+  .about-me {
+    height: 150vh;
+  }
+
+  .work-exp {
+    height: 200vh;
+  }
+
+  .skills-section .skills-subdiv {
+    width: 80%;
+  }
+
+  .extras {
+    height: 80vh;
+  }
+
 }

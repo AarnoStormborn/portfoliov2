@@ -1,94 +1,96 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import '../styles/navbar.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Navbar() {
-  
-  const offcanvasHeader = {
-    borderBottom: '1px solid gray' ,
-    justifyContent: 'space-around'
-  }
 
   const handleClick = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 70);
   };
 
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-  const [navbarHidden, setNavbarHidden] = useState(false);
+  const homeOffset = -250
+  const [aboutOffset, setAboutOffset] = useState(0)
+  const [skillsOffset, setSkillsOffset] = useState(0)
+  const [projectsOffset, setProjectsOffset] = useState(-90)
+  const [contactOffset, setContactOffset] = useState(0)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      setNavbarHidden(prevScrollPos > currentScrollPos);
-      setPrevScrollPos(currentScrollPos);
+  useEffect (() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 500) {
+        setAboutOffset(-270)
+        setSkillsOffset(-100)
+        setProjectsOffset(-225)
+        setContactOffset(-200)
+      } else if (window.innerWidth <= 768) {
+        setAboutOffset(-225)
+        setSkillsOffset(-100)
+        setProjectsOffset(-225)
+        setContactOffset(-200)
+      } else {
+        setAboutOffset(0)
+        setSkillsOffset(0)
+        setProjectsOffset(-90)
+        setContactOffset(0)
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [prevScrollPos]);
+      window.removeEventListener('resize', handleResize)
+    }
+  })
+
 
   return (
     <>
-     <nav className="navbar fixed-top" style={navbarHidden?{}:{display:'none'}}>
-      <div className="container-fluid mx-5 px-5">
-        <Link className="navbar-brand" to="/" onClick={handleClick}>
-          <img src="images/apple-touch-icon.png" alt="" width={35} height={35} className="logo" />
-        </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-         aria-controls="offcanvasNavbar">
-          <i className="fa-solid fa-bars"></i> 
-        </button>
-        <div className="offcanvas offcanvas-start offcanvas-size-md" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div className="offcanvas-header" style={offcanvasHeader} data-bs-dismiss="offcanvas">
-            <img src="images/apple-touch-icon.png" alt="" width={50} height={50} className="nav-logo" />
-          </div>
-          <div className="offcanvas-body ms-1" data-bs-dismiss="offcanvas">
-            <ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
-              <li className="nav-item mt-2 ms-2">
-                <Link className="nav-link active" aria-current="page" to="/" onClick={handleClick}>
+      <nav className="navbar navbar-expand-lg border-bottom border-body sticky-top">
+        <div className="container-fluid ms-5">
+          <Link className="navbar-brand mx-3 nav-logo" to="/" onClick={handleClick}>
+            <img src="images/apple-touch-icon.png" alt="" width={40} height={40} className="logo" />
+          </Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse justify-content-end me-5" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" to="home" spy={true} smooth={true} offset={homeOffset} duration={500} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                   <i className="fa-solid fa-house p-1"></i>
                   <span className="ms-2">Home</span>
                 </Link>
               </li>
-              <li className="nav-item mt-2 ms-2">
-                <Link className="nav-link active" to="/profile" onClick={handleClick}>
+              <li className="nav-item">
+                <Link className="nav-link" to="about" spy={true} smooth={true} offset={aboutOffset} duration={500} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                   <i className="fa-solid fa-user p-1"></i>
-                  <span className="ms-2">Profile</span>
+                  <span className="ms-2">About</span>
                 </Link>
               </li>
-              <li className="nav-item mt-2 ms-2">
-                <Link className="nav-link active" to="/projects" onClick={handleClick}>
+              <li className="nav-item">
+                <Link className="nav-link" to="skills" spy={true} smooth={true} offset={skillsOffset} duration={500} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                  <i className="fa-solid fa-pen-fancy p-1"></i>
+                  <span className="ms-2">Skills</span>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="projects" spy={true} smooth={true} offset={projectsOffset} duration={500} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                   <i className="fa-solid fa-diagram-project p-1"></i>
                   <span className="ms-2">Projects</span>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="contact" spy={true} smooth={true} offset={contactOffset} duration={500} data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                  <i class="fa-solid fa-envelope p-1"></i>
+                  <span className="ms-2">Contact</span>
+                </Link>
+              </li>
             </ul>
           </div>
-          <div className="offcanvas-footer">
-            <div className="d-flex justify-content-center mb-5">
-              <div className="nav-icon">
-                <a className="navbar-brand" href="https://github.com/AarnoStormborn" target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-github"></i>
-                </a>
-              </div>
-              <div className="nav-icon">
-                <a className="navbar-brand" href="https://www.linkedin.com/in/harsh-singh-4428241b4/" target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a> 
-              </div>
-              <div className="nav-icon">
-                <a className="navbar-brand" href="https://www.kaggle.com/harshsingh2209" target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-kaggle"></i>
-                </a> 
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </>
   )
 }
-

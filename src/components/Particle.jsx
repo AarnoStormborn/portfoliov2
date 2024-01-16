@@ -1,8 +1,19 @@
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
 const Particle = () => {
+
+  const [particlesKey, setParticlesKey] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setParticlesKey(prevKey => prevKey + 1);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
@@ -13,6 +24,7 @@ const Particle = () => {
 
   return (
     <Particles
+      key={particlesKey}
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
@@ -45,7 +57,7 @@ const Particle = () => {
             },
             repulse: {
               distance: 200,
-              duration: 0.4,
+              duration: 0,
             },
           },
         },

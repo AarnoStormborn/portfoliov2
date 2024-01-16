@@ -30,7 +30,7 @@
 }
 
 .contact-section {
-  flex-direction: column;
+  background-color: #f2f2f2;
 }
 
 .top-div {
@@ -38,58 +38,94 @@
   justify-content: center;
 }
 
-.contact-section {
-  background-color: #ffffff;
-}
-
-/* Parallax effect */ 
-/* .about-me {
-  transform: translateY(50%);
-} */
-
-/* .contact-section {
-  transform: translateY(200%);
-} */
-
-/* .active-section {
-  transform: translateY(0%);
-} */
-
 #title {
   font-size: 4em;
 }
 
-/* Column Orientation */
-@media (max-width: 767px) {
-  .intro-section,
+@media (max-width: 999px) {
   .about-me {
+    height: 100vh;
+  }
+}
+
+/* Column Orientation */
+@media (max-width: 768px) {
+  .intro-section{
     flex-direction: column;
   }
 
-  .top-div {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .intro-section .col-md-5,
-  .about-me .col-md-6 {
+  .intro-section .top-div {
     order: 2;
   }
-  
-  .intro-section .top,
-  .about-me .top {
+
+  .intro-section .bottom-div {
     order: 1;
   }
 
+  .intro-section .bottom-div .banner-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .about-me {
-    height: 180vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-me .top-div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-me .bottom-div {
+    padding-bottom: 5%;
+  }
+
+  .about-me .top-image-div {
+    order: 1;
+  }
+  
+  .about-me .bottom-content-div {
+    order: 2;
+    width: 90%;
+  }
+
+  .about-me {
+    height: 160vh;
   }
 
   #title {
     font-size: 3em;
   }
+
+  .contact-section .top-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-section .top-contact-div {
+    order: 1;
+    margin-bottom: 5%;
+    width: 80%;
+  }
+
+  .contact-section .bottom-contact-div {
+    order: 2;
+    width: 80%;
+  }
 }
 
+@media (max-width: 420px) {
+  .about-me {
+    height: 200vh;
+  }
+
+  .about-me .bottom-content-div {
+    width: 90%;
+  }
+}
 
 
 /* H1 animations */
@@ -317,7 +353,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #map {
     height: 120%;
   }
@@ -326,4 +362,11 @@
 .disable-cursor {
   pointer-events: none;
   cursor: none;
+}
+
+.banner {
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  background-color: #38cc87;
 }

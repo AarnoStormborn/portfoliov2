@@ -17,7 +17,7 @@
 }
 
 .nav-logo {
-  animation: rotation 4s linear infinite;
+  animation: rotation 5s linear infinite;
 }
 
 @keyframes rotation {
@@ -27,9 +27,14 @@
   40% {
     transform: rotate(360deg);
   }
-  50% {
+  60% {
     transform: rotate(0deg);
   }
+}
+
+.nav-item .active *{
+  color: #198754;
+  transform: scale(1.05);
 }
 
 .nav-item:hover *{
@@ -42,6 +47,21 @@
   transform: scale(1.2);
 }
 
+.nav-link{
+  color: black;
+  cursor: pointer;
+}
+
+.navbar-brand {
+  cursor: pointer;
+}
+
 .navbar:active {
   background-color: white;
 }
+
+nav {
+  box-shadow: 0px 0.1px;
+  background-color: #fff;
+}
+

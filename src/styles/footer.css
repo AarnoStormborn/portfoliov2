@@ -6,7 +6,19 @@
   transition: transform 0.3s ease-out;
   position: relative;
   border-top: 1px solid gray;
-  background-color: #f2f2f2;
+  background-color: #100E09;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: 15vh;
+    display: flex;
+  }
+
+  .footer .col-md-4 {
+    padding-block: 1%;
+  }
 }
 
 .footer .row {
@@ -25,7 +37,7 @@
 
 .footer .icon {
   display: flex;
-  background-color: #000000;
+  background-color: #ffffff;
   justify-content: center;
   height: 2em;
   width: 2em;
@@ -39,7 +51,7 @@
 }
 
 .footer .icon i {
-  color: #ffffff;
+  color: #100E09;
   font-size: 1.2em;
   margin: 5px;
   padding: 3px;
@@ -51,7 +63,7 @@
   transform: scale(1.2);
 }
 
-@media (max-height:767px) {
+@media (max-height:768px) {
   .footer {
     height: 15vh;
   }

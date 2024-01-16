@@ -18,7 +18,8 @@ function Education() {
               <div
                 className="col-md-6 second"
               >
-                <span className="period">August 10, 2020 - Present</span>
+                <span className="period py-1">August 10, 2020 - Present</span>
+                <span className="grade py-1">Grade: 3.68/4.00 CGPA</span>
               </div>
             </div> <hr className="break"></hr>
           </div>
@@ -31,7 +32,8 @@ function Education() {
               <div
                 className="col-md-6 second"
               >
-                <span className="period">April 1, 2018 - March 30, 2020</span>
+                <span className="period py-1">April 1, 2018 - March 30, 2020</span>
+                <span className="grade py-1">Grade: 82.69%</span>
               </div>
             </div> <hr className="break"></hr>
           </div> 
@@ -44,7 +46,8 @@ function Education() {
               <div
                 className="col-md-6 second"
               >
-                <span className="period">June 1, 2016 - March 30, 2018</span>
+                <span className="period py-1">June 1, 2016 - March 30, 2018</span>
+                <span className="grade py-1">Grade: 84.21%</span>
               </div>
             </div> <hr className="break"></hr>
           </div> 
