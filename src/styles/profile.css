@@ -300,9 +300,9 @@
 
 }
 
-@media (max-height: 1000px) {
+@media (max-height: 1000px) or (max-width: 500px) {
   .work-exp {
-    height: 200vh;
+    height: 220vh;
   }
 
   .education {

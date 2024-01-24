@@ -9,10 +9,10 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 function Home() {
-  
+
   return (
     <>
-      <div className="container-fluid g-0 mt-1 pt-1 mx-auto home-page" >
+      <div className="container-fluid g-0 mt-1 pt-1 mx-auto home-page">
         <Intro />
         <About />
         <WorkExp />
